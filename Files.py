@@ -25,7 +25,7 @@ class File():
         self._copyDirectory(source, dest)
 
     def _fixSeperators(self, path):
-        ### Return the path with seperator changed to the current machine seperator ###
+        ### Return the path with seperator changed to the current OS seperator ###
         return path.replace("\\", self.seperator).replace(
             "/", self.seperator)
 
