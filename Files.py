@@ -8,7 +8,7 @@ class File():
 
     def copyDirectory(self, source, dest):
         if not os.path.exists(source):
-            raise FileNotFoundError("Source directory doesn't'")
+            raise FileNotFoundError("Source directory doesn't' exists")
         self._copyDirectory(source, dest)
 
     def _copyDirectory(self, source, dest):
