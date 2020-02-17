@@ -2,7 +2,7 @@ import os
 import shutil
 
 
-class File():
+class Files:
     def __init__(self):
         self.seperator = os.path.sep
 
@@ -23,6 +23,13 @@ class File():
                 if not os.path.exists(d) or os.stat(s).st_mtime - os.stat(d).st_mtime > 1:
                     shutil.copyfile(s, d)
         self._copyDirectory(source, dest)
+
+    def removeDirectory(self, target):
+        if os.path.exists(target):
+            self._removeDirectory(target)
+
+    def _removeDirectory(self, target):
+        shutil.rmtree(target)
 
     def _fixSeperators(self, path):
         ### Return the path with seperator changed to the current OS seperator ###
